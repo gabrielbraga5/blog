@@ -1,0 +1,53 @@
+.navbar-brand {
+    padding-top: 10px;
+    height: 84px;
+    display: inline-block;
+    float: none !important;
+}
+
+.nav >li >a {
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+}
+.navbar-toggle {
+    padding: 10px;
+    margin: 25px 15px 25px 0;
+
+}
+
+h1 {
+    color: #0000FF;
+}
+
+h2 {
+    color: #FF0000;
+}
+
+footer {
+    margin-top: 60px;
+}
+
+.validation-message {
+    font-style: normal;
+    font-size: 10px;
+    color: #FF1C19;
+}
+
+a {
+    transition: all .2s;
+}
+
+a:hover, a:focus, a:active {
+    color: purple;
+    text-decoration: none;
+    background-color: #4CAF50;    }
+
+
+.pagination {
+    display: block;
+    text-align: center;
+}
+.active {
+    background-color: #4CAF50;
+}

@@ -1,0 +1,64 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+
+    <div th:fragment="header-css">
+
+        <title>Blog</title>
+
+        <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+              th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"
+              rel="stylesheet" media="screen"/>
+
+        <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+                th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+        <link rel="stylesheet" th:href="@{/css/main.css}"
+              href="../../css/main.css"/>
+    </div>
+</head>
+<body>
+<div th:fragment="header">
+    <nav class="navbar navbar-inverse navbar-static-top">
+
+        <div class="container">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar3">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a th:href="@{/home}" class="navbar-brand">
+                    <img th:src="@{/css/sitelogo.png}" href="../../css/sitelogo.png"  alt="Imagem responsiva"/>
+                </a>
+            </div>
+            <div id="navbar3" class="collapse navbar-collapse navbar-right">
+
+                <ul class="nav navbar-nav" sec:authorize="!isAuthenticated()">
+                    <li ><a  th:href="@{/registration}">Registrar</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav" sec:authorize="!isAuthenticated()">
+                    <li><a  th:href="@{/login}">Login</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav" sec:authorize="hasRole('USER')">
+                    <li ><a  th:href="@{'/blog/' + ${#authentication.getName()}}">Meu Blog</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav" sec:authorize="hasRole('USER')">
+                    <li><a  th:href="@{/newPost}">Novo Post</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav" sec:authorize="isAuthenticated()">
+                    <li ><a  th:href="@{/logout}">Sair</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+</body>
+</html>
