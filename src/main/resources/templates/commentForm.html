@@ -24,7 +24,13 @@
                         <label th:if="${#fields.hasErrors('body')}" th:errors="*{body}"
                                class="alert alert-danger"></label>
                         <textarea th:field="*{body}"
-                                  placeholder="Body" class="form-control input-lg"/>
+                                  placeholder="Texto..." class="form-control input-lg" id="txtComment" name="txtComment"/>
+
+                        <script src="ckeditor/ckeditor.js"
+                                th:src="@{/ckeditor/ckeditor.js}"></script>
+                        <script>
+                            CKEDITOR.replace('txtComment');
+                        </script>
                     </div>
 
                     <input type="hidden" th:field="*{post}"/>

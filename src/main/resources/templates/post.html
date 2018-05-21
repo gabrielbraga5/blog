@@ -16,13 +16,12 @@
         <h1 th:text="${post.title}">Titulo</h1>
         <div th:text="'Created: ' + ${#dates.format(post.createDate, 'dd-MMM-yyyy')} + ' by '">Criado por</div>
         <div><a th:text="${post.user.username}" th:href="@{'/blog/' + ${post.user.username}}">Usuario</a></div>
-        <h3 th:text="${post.body}">Texto</h3>
-
+        <pre th:utext="${post.body}">Texto</pre>
 
         <div sec:authorize="isAuthenticated()" th:if="${username}">
             <div class="row">
                 <a th:href="@{'/editPost/{id}'(id=${post.id})}" class="col-md-2">
-                    <button type="button" class="btn btn-primary btn-block" th:text="Edit">Edit</button>
+                    <button type="button" class="btn btn-primary btn-block" th:text="Editar">Editar</button>
                 </a>
 
             </div>
@@ -33,7 +32,7 @@
 
 
     <div class="well" th:each="comment : ${post.comments}">
-        <h3 th:text="${comment.body}">Texto</h3>
+        <pre th:utext="${comment.body}">Texto</pre>
         <div th:text="'Criado: ' + ${#dates.format(comment.createDate, 'dd-MMM-yyyy')} + ' por '">
             Criado por:
         </div>

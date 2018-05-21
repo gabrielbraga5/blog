@@ -1,5 +1,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
+
 </head>
 <body>
 <div th:fragment="posts">
@@ -13,8 +14,12 @@
             <div><a th:text="${post.user.username}" th:href="@{'/blog/' + ${post.user.username}}">Usuario</a>
             </div>
         </div>
-        <h3 class="panel-body" th:text="${post.body}">Texto</h3>
+        <pre th:utext="${post.body}">
+       </pre>
         <br></br>
+
+
+
     </div>
 
 </div>
