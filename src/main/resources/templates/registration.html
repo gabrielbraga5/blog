@@ -22,14 +22,14 @@
                 <div class="form-group">
                     <label th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
                            class="alert alert-danger"></label>
-                    <input type="text" th:field="*{name}" placeholder="Name"
+                    <input type="text" th:field="*{name}" placeholder="Nome"
                            class="form-control input-lg"/>
                 </div>
 
                 <div class="form-group">
                     <label th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"
                            class="alert alert-danger"></label>
-                    <input type="text" th:field="*{lastName}" placeholder="Last Name"
+                    <input type="text" th:field="*{lastName}" placeholder="Sobrenome"
                            class="form-control input-lg"/>
                 </div>
 
@@ -43,20 +43,20 @@
                 <div class="form-group">
                     <label th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
                            class="alert alert-danger"></label>
-                    <input type="password" th:field="*{password}" placeholder="Password"
+                    <input type="password" th:field="*{password}" placeholder="Senha"
                            class="form-control input-lg"/>
                 </div>
 
                 <div class="form-group">
                     <label th:if="${#fields.hasErrors('username')}" th:errors="*{username}"
                            class="alert alert-danger"></label>
-                    <input type="text" th:field="*{username}" placeholder="Username"
+                    <input type="text" th:field="*{username}" placeholder="Usuario"
                            class="form-control input-lg"/>
                 </div>
 
                 <div class="row">
                     <div class="col-sm-3" style="float: none; margin: 0 auto;">
-                        <input type="submit" class="btn btn-primary btn-block" value="Submit"/>
+                        <input type="submit" class="btn btn-primary btn-block" value="Postar"/>
                     </div>
                 </div>
 
@@ -65,7 +65,7 @@
     </div>
 
 </div>
-<!-- /.container -->
+
 
 <div th:replace="/fragments/footer :: footer"/>
 

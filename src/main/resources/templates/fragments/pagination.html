@@ -4,10 +4,10 @@
 <body>
 <div th:fragment="pagination">
 
-    <!-- Pagination -->
+
     <div class="pagination" th:with="baseUrl=${URLparameter}">
         <span th:if="${pager.indexOutOfBounds()}">
-            A página está fora dos limites. Volte para: <a class="pageLink"
+            Não existem mais paginas. Volte para: <a class="pageLink"
                                                  th:href="@{${baseUrl}(page=1)}">Home</a>.
         </span>
 
